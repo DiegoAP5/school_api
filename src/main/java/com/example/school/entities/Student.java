@@ -8,8 +8,9 @@ import lombok.Setter;
 
 import java.util.List;
 
+@Entity
 @Getter @Setter
-@Entity(name = "students")
+@Table(name = "students")
 public class Student {
 
     @Id
@@ -28,7 +29,7 @@ public class Student {
     private Tutor tutor;
 
     @ManyToMany
-    @JoinTable(name = "students-subjects", joinColumns = @JoinColumn(name = "student_id"),
+    @JoinTable(name = "students_subjects", joinColumns = @JoinColumn(name = "student_id"),
                 inverseJoinColumns = @JoinColumn(name = "subject_id"))
     private List<Subject> subjects;
 }

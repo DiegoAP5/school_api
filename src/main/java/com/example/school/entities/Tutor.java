@@ -6,8 +6,9 @@ import lombok.Setter;
 
 import java.util.List;
 
+@Entity
 @Getter @Setter
-@Entity(name = "tutors")
+@Table(name = "tutors")
 public class Tutor {
 
     @Id

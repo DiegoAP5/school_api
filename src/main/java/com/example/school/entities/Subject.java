@@ -6,8 +6,9 @@ import lombok.Setter;
 
 import java.util.List;
 
+@Entity
 @Getter @Setter
-@Entity(name = "subjects")
+@Table(name = "subjects")
 public class Subject {
 
     @Id
@@ -17,5 +18,5 @@ public class Subject {
     private String name;
 
     @ManyToMany(mappedBy = "subjects")
-    private List<Subject> subjects;
+    private List<Student> students;
 }

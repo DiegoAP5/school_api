@@ -9,17 +9,16 @@ import java.util.List;
 
 public interface IStudentRepository extends JpaRepository<Student, Long> {
 
-    @Query(value = "SELECT s.name, t.name, t.email FROM subjects s JOIN students-subjects a ON s.id = a.subject_id "+
+    @Query(value = "SELECT s.name, t.email FROM subjects s JOIN students_subjects a ON s.id = a.subject_id "+
                     "JOIN students t ON t.id = a.student_id "+
                     "WHERE a.student_id =:id",nativeQuery = true)
     List<Object> findAllSubjectsByStudentId(Long id);
 
-    @Query(value = "SELECT s.id, s.name, s.lastname, s.email FROM students s "
+    @Query(value = "SELECT s.id, s.first_name, s.last_name, s.email FROM students s "
                     ,nativeQuery = true)
     List<StudentProjection> getAllStudents();
 
-    @Query(value = "SELECT s.id, s.name, s.lastname, s.email FROM students s "+
-                    "INNER JOIN tutors ON students.tutor_id = tutors.id "+
-                    "WHERE studenst.tutor_id =:id", nativeQuery = true)
+    @Query(value = "SELECT s.id, s.first_name, s.last_name, s.email AS tutorId FROM students s "+
+                    "WHERE tutor_id =:id", nativeQuery = true)
     List<Object> findAllStudentsByTutorId(Long id);
 }

@@ -119,8 +119,8 @@ public class StudentServiceImpl implements IStudentService {
     private StudentResponse from(Student student){
         StudentResponse response = new StudentResponse();
         response.setId(student.getId());
-        response.setFirsName(student.getFirstName());
-        response.setLastName(student.getLastName());
+        response.setFirst_name(student.getFirstName());
+        response.setLast_name(student.getLastName());
         response.setEmail(student.getEmail());
         return response;
     }
@@ -128,8 +128,8 @@ public class StudentServiceImpl implements IStudentService {
     private StudentResponse from(StudentProjection student){
         StudentResponse response = new StudentResponse();
         response.setId(student.getId());
-        response.setFirsName(student.getName());
-        response.setLastName(student.getSurname());
+        response.setFirst_name(student.getFirst_name());
+        response.setLast_name(student.getLast_name());
         response.setEmail(student.getEmail());
         return response;
     }

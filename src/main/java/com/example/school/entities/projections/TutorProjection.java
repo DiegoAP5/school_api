@@ -4,9 +4,9 @@ public interface TutorProjection {
 
     Long getId();
 
-    String getName();
+    String getFirst_name();
 
-    String getSurname();
+    String getLast_name();
 
     String getEmail();
 }

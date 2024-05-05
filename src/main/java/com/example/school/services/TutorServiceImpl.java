@@ -68,8 +68,8 @@ public class TutorServiceImpl implements ITutorService {
     private TutorResponse from (Tutor tutor){
         TutorResponse response = new TutorResponse();
         response.setId(tutor.getId());
-        response.setFirstName(tutor.getFirstName());
-        response.setLastName(tutor.getLastName());
+        response.setFirst_name(tutor.getFirstName());
+        response.setLast_name(tutor.getLastName());
         response.setEmail(tutor.getEmail());
         return response;
     }
@@ -77,8 +77,8 @@ public class TutorServiceImpl implements ITutorService {
     private TutorResponse from(TutorProjection tutor){
         TutorResponse response = new TutorResponse();
         response.setId(tutor.getId());
-        response.setFirstName(tutor.getName());
-        response.setLastName(tutor.getSurname());
+        response.setFirst_name(tutor.getFirst_name());
+        response.setLast_name(tutor.getLast_name());
         response.setEmail(tutor.getEmail());
         return response;
     }

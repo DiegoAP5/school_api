@@ -10,7 +10,7 @@ import java.util.List;
 public interface ITutorRepository extends JpaRepository<Tutor, Long> {
 
     @Query(value = "SELECT tutors.* FROM tutors "+
-                    "WHERE tutors.name =:name", nativeQuery = true)
+                    "WHERE tutors.first_name =:name", nativeQuery = true)
     TutorProjection getTutorByName(String name);
 
     @Query(value = "SELECT tutors.* FROM tutors ", nativeQuery = true)
